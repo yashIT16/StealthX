@@ -14,30 +14,15 @@
 
 ### Command-Line Interface (CLI)
 
-The CLI application is built with `rich` and provides a beautiful, interactive terminal experience. Here's a glimpse of the banner:
+The CLI application is built with `rich` and provides a beautiful, interactive terminal experience.
 
-```text
-  ___________________              .__    __  .__      ____  ___
- /   _____/|__\__    /____ _____  |  | _/  |_|  |__   \   \/  /
- \_____  \ |  | |    |/     \\__  \ |  | \   __\  |  \   \     / 
- /        \|  | |    |  Y Y  \/ __ \|  |__|  | |   Y  \  /     \ 
-/_______  /|__| |____|__|_|  (____  /____/|__| |___|  / /___/\  \
-        \/                 \/     \/                \/        \_/
-
-   Cybersecurity Toolkit | Password Auditing & Simulation System   
-
-1. Password Strength Analysis
-2. Secure Password Generator
-3. Attack Simulation (JtR / Native)
-4. View Session History
-5. Exit
-```
-
-*(You can add a real image screenshot of the CLI here by uploading an image and linking it like `![CLI](screenshot_cli.png)`)*
+![CLI Screenshot](screenshot_cli.svg)
 
 ### Graphical User Interface (GUI)
 
-*(You can add a screenshot of the GUI here by uploading an image and linking it like `![GUI](screenshot_gui.png)`)*
+The Web GUI provides a sleek, modern dashboard for all your security auditing needs.
+
+![GUI Screenshot](screenshot_gui.png)
 
 ## Project Structure
 
