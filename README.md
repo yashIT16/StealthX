@@ -24,27 +24,64 @@
 
 ## Installation
 
+### For Windows
+
 1. Clone this repository.
 2. Ensure you have Python 3.7+ installed.
-3. Install the required dependencies:
+3. Open PowerShell or Command Prompt in the project folder.
+4. Create and activate a virtual environment (recommended):
+   ```cmd
+   python -m venv venv
+   venv\Scripts\activate
+   ```
+5. Install the required dependencies:
+   ```cmd
+   pip install -r requirements.txt
+   ```
+
+### For Linux / macOS
+
+1. Clone this repository.
+2. Ensure you have Python 3.7+ installed.
+3. Open your terminal in the project folder.
+4. Create and activate a virtual environment (recommended):
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+5. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
 ## Usage
 
+*Make sure your virtual environment is activated before running the application.*
+
 ### Command Line Interface (CLI)
 
 Run the CLI application for a rich terminal experience:
-```bash
+
+**Windows:**
+```cmd
 python cli.py
+```
+**Linux / macOS:**
+```bash
+python3 cli.py
 ```
 
 ### Graphical User Interface (GUI)
 
 Run the GUI application for a windowed experience:
-```bash
+
+**Windows:**
+```cmd
 python gui_app.py
+```
+**Linux / macOS:**
+```bash
+python3 gui_app.py
 ```
 
 ### Attack Simulation Wordlist
