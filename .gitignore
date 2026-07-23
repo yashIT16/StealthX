@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+stealthx_history.json
+rockyou.txt
+rockyou.txt.gz
+rockyou.txt.tar.gz
+.venv/
+venv/
+env/
+.env

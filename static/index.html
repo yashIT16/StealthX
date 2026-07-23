@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StealthX | Cyber Security Toolkit</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+
+    <div class="hologram-overlay"></div>
+
+    <nav class="glass-nav">
+        <div class="logo">
+            <span class="neon-text">STEALTH</span><span class="elec-text">X</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active" data-target="strength-sec">Analyzer</a></li>
+            <li><a href="#" data-target="gen-sec">Generator</a></li>
+            <li><a href="#" data-target="attack-sec">Attack</a></li>
+            <li><a href="#" data-target="pwned-sec">Pwned Check</a></li>
+            <li><a href="#" data-target="history-sec">History</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- Dashboard Sections -->
+        <section id="strength-sec" class="glass-panel active-sec">
+            <h2>Password Analyzer</h2>
+            <div class="input-group">
+                <input type="password" id="analyze-input" placeholder="Enter target password...">
+                <button id="analyze-btn" class="neon-btn">ANALYZE</button>
+            </div>
+            <div id="analyze-results" class="results hidden">
+                <div class="score-container">
+                    <div class="strength-bar"><div class="fill" id="strength-fill"></div></div>
+                    <p id="score-text" class="score-text">Score: 0/4</p>
+                </div>
+                
+                <div class="split-results">
+                    <div class="result-box">
+                        <h3>Metrics</h3>
+                        <p>Entropy: <span id="res-entropy" class="elec-text">0</span> bits</p>
+                        <p>Breaches: <span id="res-breches" class="warning-text">0</span></p>
+                        <ul id="res-feedback" class="feedback-list"></ul>
+                    </div>
+                    <div class="result-box">
+                        <h3>Crack Times</h3>
+                        <p>Fast Online: <span id="ct-fast" class="elec-text">-</span></p>
+                        <p>Slow Offline: <span id="ct-slow" class="elec-text">-</span></p>
+                        <p>Fast Offline: <span id="ct-vfast" class="elec-text">-</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gen-sec" class="glass-panel hidden">
+            <h2>Secure Generator</h2>
+            <div class="controls">
+                <label>Length: <span id="len-disp">16</span></label>
+                <input type="range" id="gen-len" min="1" max="64" value="16">
+                
+                <div class="checkboxes">
+                    <label><input type="checkbox" id="gen-up" checked> Uppercase</label>
+                    <label><input type="checkbox" id="gen-low" checked> Lowercase</label>
+                    <label><input type="checkbox" id="gen-num" checked> Numbers</label>
+                    <label><input type="checkbox" id="gen-spec" checked> Special</label>
+                </div>
+                
+                <button id="gen-btn" class="elec-btn">GENERATE</button>
+            </div>
+            <div class="output-box">
+                <input type="text" id="gen-output" readonly>
+            </div>
+        </section>
+
+        <section id="attack-sec" class="glass-panel hidden">
+            <h2>Attack Simulation</h2>
+            <p class="sub">Uses native Fallback or JtR if available.</p>
+            <div class="input-group">
+                <input type="password" id="attack-target" placeholder="Target Password">
+                <select id="attack-mode">
+                    <option value="dictionary">Dictionary (rockyou.txt)</option>
+                    <option value="hybrid">Hybrid (Dictionary + Digits)</option>
+                    <option value="brute">Simulated Brute Force</option>
+                </select>
+                <button id="attack-btn" class="danger-btn">INITIATE</button>
+            </div>
+            
+            <div id="attack-results" class="terminal-box hidden">
+                <div class="term-header">
+                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    Terminal Output
+                </div>
+                <div id="term-content" class="term-content">
+                    > Standing by...
+                </div>
+            </div>
+        </section>
+
+        <section id="pwned-sec" class="glass-panel hidden">
+            <h2>Pwned Password Checker</h2>
+            <p class="sub">Uses the HIBP k-Anonymity API. Your full password is <span class="neon-text">NEVER</span> sent over the network.</p>
+            <div class="input-group">
+                <input type="password" id="pwned-input" placeholder="Enter password to check...">
+                <button id="pwned-btn" class="neon-btn">CHECK STATUS</button>
+            </div>
+            <div id="pwned-results" class="results hidden" style="text-align: center; padding: 2rem;">
+                <h3 id="pwned-status-msg"></h3>
+                <p>Times found in breaches: <span id="pwned-count" class="elec-text" style="font-size: 2rem; font-weight: bold;">0</span></p>
+            </div>
+        </section>
+
+        <section id="history-sec" class="glass-panel hidden">
+            <h2>Session Logs</h2>
+            <button id="refresh-hist-btn" class="elec-btn small">Refresh</button>
+            <div class="table-container">
+                <table id="hist-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Action</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/static/script.js?v=2"></script>
+</body>
+</html>
