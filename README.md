@@ -10,6 +10,35 @@
 - **Data Breach Checker**: Integrates with the Have I Been Pwned (HIBP) API to check if a password has appeared in known data breaches.
 - **Session History**: Logs actions and analysis results locally for easy review.
 
+## Preview
+
+### Command-Line Interface (CLI)
+
+The CLI application is built with `rich` and provides a beautiful, interactive terminal experience. Here's a glimpse of the banner:
+
+```text
+  ___________________              .__    __  .__      ____  ___
+ /   _____/|__\__    /____ _____  |  | _/  |_|  |__   \   \/  /
+ \_____  \ |  | |    |/     \\__  \ |  | \   __\  |  \   \     / 
+ /        \|  | |    |  Y Y  \/ __ \|  |__|  | |   Y  \  /     \ 
+/_______  /|__| |____|__|_|  (____  /____/|__| |___|  / /___/\  \
+        \/                 \/     \/                \/        \_/
+
+   Cybersecurity Toolkit | Password Auditing & Simulation System   
+
+1. Password Strength Analysis
+2. Secure Password Generator
+3. Attack Simulation (JtR / Native)
+4. View Session History
+5. Exit
+```
+
+*(You can add a real image screenshot of the CLI here by uploading an image and linking it like `![CLI](screenshot_cli.png)`)*
+
+### Graphical User Interface (GUI)
+
+*(You can add a screenshot of the GUI here by uploading an image and linking it like `![GUI](screenshot_gui.png)`)*
+
 ## Project Structure
 
 - `cli.py`: The rich command-line interface application.
